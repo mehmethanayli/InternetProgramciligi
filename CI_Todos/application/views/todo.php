@@ -27,10 +27,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="" method="POST">
+                    <form action="<?php echo base_url("todo/insert") ?>" method="POST">
                         <div class="row">
                             <div class="col-md-11">
-                                <input type="text" class="form-control" placeholder="Planladığınız işlemi giriniz..">
+                                <input name="todo_description" type="text" class="form-control" placeholder="Planladığınız işlemi giriniz..">
                             </div>
                             <div class="col-md-1">
                                 <button class="btn btn-primary">Ekle </button>
@@ -58,7 +58,7 @@
 
                             <tr>
                                 <td><?php echo $todo->description; ?></td>
-                                <td> <input type="checkbox" class="form-control" <?php echo ($todo->copletedAt==1)? "checked": " " ?>></td>
+                                <td> <input type="checkbox" class="form-control" <?php echo ($todo->completedAt==1)? "checked": " " ?>></td>
                                 <td><a href="<?php echo base_url("todo/delete/$todo->id") ?>" class="btn btn-danger"> Sil </a> </td>
                             </tr>
 

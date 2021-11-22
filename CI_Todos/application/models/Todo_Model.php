@@ -17,12 +17,13 @@ class Todo_Model extends CI_Model{
 
     }
 
-    public function insert(){
+    public function insert($data=array()){
 
+        return $this->db->insert($this->tableName,$data);
     }
 
-    public function delete(){
-
+    public function delete($id){
+        return $this->db->where("id",$id)->delete($this->tableName);
     }
 
     public function update(){
