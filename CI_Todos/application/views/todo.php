@@ -1,3 +1,12 @@
+<?php
+
+//Test için verilerin gelip gelmediği kontrol edildi.
+//print_r($todos);
+
+//die();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,14 +53,16 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>Ödevler Yapılacak</td>
-                            <td>Durum</td>
-                            <td><a href="" class="btn btn-danger"> Sil </a> </td>
-                        </tr>
 
-               
+                        <?php foreach ($todos as $todo) { ?>
 
+                            <tr>
+                                <td><?php echo $todo->description; ?></td>
+                                <td> <input type="checkbox" class="form-control" <?php echo ($todo->copletedAt==1)? "checked": " " ?>></td>
+                                <td><a href="<?php echo base_url("todo/delete/$todo->id") ?>" class="btn btn-danger"> Sil </a> </td>
+                            </tr>
+
+                        <?php } ?>
 
 
                     </tbody>
