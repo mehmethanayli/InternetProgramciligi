@@ -58,7 +58,10 @@
 
                             <tr>
                                 <td><?php echo $todo->description; ?></td>
-                                <td> <input type="checkbox" class="form-control" <?php echo ($todo->completedAt==1)? "checked": " " ?>></td>
+                                <td> <input 
+                                type="checkbox" 
+                                data-url="<?php echo base_url("todo/isCompletedSetter/$todo->id")?>"
+                                class="form-control js-switch" <?php echo ($todo->completedAt==1)? "checked": " " ?>></td>
                                 <td><a href="<?php echo base_url("todo/delete/$todo->id") ?>" class="btn btn-danger"> Sil </a> </td>
                             </tr>
 
