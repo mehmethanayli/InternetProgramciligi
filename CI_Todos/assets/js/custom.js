@@ -7,10 +7,10 @@ $(document).ready(function(){
 //body altında js-switch classına sahip item'ın durumunda bir değişiklik varsa
 $("body").on("change",".js-switch",function(){
 
-    var $completed=$(this).prop("checked")
+    var $complated=$(this).prop("checked")
 
     //Verinin gelip gelmediği kontrol edildi.
-    //alert($completed);
+    //alert($complated);
     
     var $url= $(this).data("url");
 
@@ -22,7 +22,7 @@ $("body").on("change",".js-switch",function(){
     //1:Url
     //2:Veri
     //3:Geri Dönüşünde Yapılacak İşlem
-    $.post($url,{completed:$completed}, function(){
+    $.post($url,{complated:$complated}, function(){
 
         //alert(response);
 

@@ -11,6 +11,7 @@ class Todo extends CI_Controller
     public function index()
     {
 
+
         //Model Eğer kullanılacaksa öncesinde yüklenmelidir.
         $this->load->model("todo_model");
 
@@ -35,7 +36,7 @@ class Todo extends CI_Controller
 
         $insert = $this->todo_model->insert(array(
             "description" => $todo_description,
-            "completedAt" => 0,
+            "complatedAt" => 0,
             "createdAt"  => date("Y-m-d H:i:s")
         ));
 
@@ -53,12 +54,12 @@ class Todo extends CI_Controller
         redirect(base_url());
     }
 
-    public function isCompletedSetter($id)
+    public function isComplatedSetter($id)
     {
         $this->load->model("todo_model");
-        $completed = ($this->input->post("completed") == true) ? 1 : 0;
+        $complated = ($this->input->post("complated") == true) ? 1 : 0;
         $this->todo_model->update($id, array(
-            "completedAt" => $completed
+            "complatedAt" => $complated
         ));
     }
 }
